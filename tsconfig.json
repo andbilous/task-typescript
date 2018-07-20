@@ -3,11 +3,16 @@
     "target": "es6",
     "module": "es6",
     "moduleResolution": "node",
-    "sourceMap": true
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules",
     "dist",
     "**/*.spec.ts"
+  ],
+  "include": [
+    "src/**/*.ts"
   ]
 }
