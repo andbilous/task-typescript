@@ -1,4 +1,12 @@
-declare class Fighter {
+
+export interface Fighters {
+  readonly name:String;
+  health:number;
+  power:number;
+  knockout();
+  hit(Fighters,number);
+}
+ export class Fighter implements Fighters {
     name:String;
     health:number;
     power:number;
@@ -14,7 +22,7 @@ declare class Fighter {
       console.log(`Health is ${this.health}`);
     }
 
-  protected hit(enemy:Fighter, point:number) {
+public hit(enemy:Fighter, point:number) {
       enemy.setDamage(point * this.power);
     }
 
@@ -31,5 +39,3 @@ declare class Fighter {
       return promise;
     }
   }
-  export default Fighter; 
-  

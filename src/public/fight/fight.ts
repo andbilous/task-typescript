@@ -1,8 +1,7 @@
-import Fighter from "./fighter";
-import ImprovedFighter from "./improvedFighter";
+ import * as Fighter from "./fighter";
 
-async function fight (fighter:Fighter, improvedFighter:ImprovedFighter, points:number) {
-    for (let i = 0; i < 5; i++) {
+export default async function fight (fighter:Fighter.Fighters, improvedFighter:Fighter.Fighters, points:number[]) {
+    for (let i = 0; i < 8; i++) {
       if (fighter.health < 0) {
         console.log(fighter.name + " is in knockout");
         fighter.knockout();
@@ -15,9 +14,8 @@ async function fight (fighter:Fighter, improvedFighter:ImprovedFighter, points:n
         console.log("Winner is " + fighter.name);
         break;
       } else
-        fighter.hit(improvedFighter, points);
-        improvedFighter.hit(fighter,points);
+        fighter.hit(improvedFighter, points[i]);
+        improvedFighter.hit(fighter,points[i]); 
     }
+    return 0;
   }
-  export default fight;
-  
